@@ -51,7 +51,7 @@ function createWindow() {
     // Check on startup and then maybe every few hours.
     // Example: Check on startup
     autoUpdater.checkForUpdatesAndNotify().catch(err => {
-        log.error('Error checking for updates', err);
+      log.error('Error checking for updates', err);
     });
 
     // Example: Check every 4 hours (more reasonable)
@@ -84,24 +84,26 @@ function createWindow() {
     });
 
     // --- Listener for update errors ---
-     autoUpdater.on('error', (err) => {
-       log.error('Error in auto-updater:', err);
-       win?.webContents.send('update-error', err.message); // Inform renderer
-     });
+    autoUpdater.on('error', (err: any) => { // Use any to handle various error shapes
+      log.error('Error in auto-updater:', err); // Log the full error object
+      const message = err?.message ?? JSON.stringify(err ?? 'Unknown update error');
+      win?.webContents.send('update-error', `Update Error: ${message}`); // Inform renderer
+    });
 
     // --- IPC Handlers for Renderer Actions ---
     ipcMain.on('start-download', () => {
       log.info('User initiated download');
-      autoUpdater.downloadUpdate().catch(err => {
-        log.error('Error starting download:', err);
-        win?.webContents.send('update-error', `Error starting download: ${err.message}`);
+      autoUpdater.downloadUpdate().catch((err: any) => { // Use any here too
+        log.error('Error starting download:', err); // Log the full error object
+        const message = err?.message ?? JSON.stringify(err ?? 'Unknown download error');
+        win?.webContents.send('update-error', `Error starting download: ${message}`);
       });
     });
 
     ipcMain.on('quit-and-install', () => {
       log.info('User initiated quit and install');
       setImmediate(() => { // Ensures response is sent before quitting
-         autoUpdater.quitAndInstall(true, true); // silent=true, forceRunAfter=true
+        autoUpdater.quitAndInstall(true, true); // silent=true, forceRunAfter=true
       });
     });
   }
@@ -118,12 +120,12 @@ function createWindow() {
     win.webContents.openDevTools()
   } else {
     // win.loadFile('dist/index.html') // Correct path in production build
-     win.loadFile(path.join(process.env.DIST, 'index.html'))
+    win.loadFile(path.join(process.env.DIST, 'index.html'))
   }
 
-   win.on('closed', () => {
-     win = null
-   })
+  win.on('closed', () => {
+    win = null
+  })
 }
 
 app.on('window-all-closed', () => {
