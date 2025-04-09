@@ -8,7 +8,7 @@ function App() {
     <>
     <UpdateNotification/>
       
-      <div>v2.0.0</div>
+      <div>v2.0.1</div>
     </>
   )
 }
