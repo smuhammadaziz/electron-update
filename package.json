@@ -1,6 +1,6 @@
 {
   "name": "my-electron-app",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "My Awesome Electron App",
   "main": "dist-electron/main.js",
   "scripts": {
