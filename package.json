@@ -1,6 +1,6 @@
 {
   "name": "my-electron-app",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "My Awesome Electron App",
   "main": "dist-electron/main.js",
   "scripts": {
@@ -29,7 +29,7 @@
   },
   "build": {
     "appId": "com.yourcompany.yourapp",
-    "productName": "My Awesome App",
+    "productName": "updater",
     "directories": {
       "output": "release/${version}"
     },
