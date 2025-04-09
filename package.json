@@ -1,0 +1,59 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "My Awesome Electron App",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && electron-builder",
+    "build:win": "npm run build -- --win --x64",
+    "build:mac": "npm run build -- --mac",
+    "build:linux": "npm run build -- --linux"
+  },
+  "dependencies": {
+    "electron-log": "^5.1.5",
+    "electron-updater": "^6.1.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "cross-env": "^7.0.3",
+    "electron": "^29.3.0",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-electron": "^0.28.6",
+    "vite-plugin-electron-renderer": "^0.14.5"
+  },
+  "build": {
+    "appId": "com.yourcompany.yourapp",
+    "productName": "My Awesome App",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "public/icon.icns",
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "public/icon.png"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "smuhammadaziz",
+      "repo": "electron-update"
+    }
+  }
+}

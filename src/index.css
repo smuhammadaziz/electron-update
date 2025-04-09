@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom base styles can go here */
+body {
+  margin: 0; /* Example */
+}
