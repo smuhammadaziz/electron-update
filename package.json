@@ -1,6 +1,6 @@
 {
   "name": "my-electron-app",
-  "version": "4.0.1",
+  "version": "1.0.0",
   "description": "My Awesome Electron App",
   "main": "dist-electron/main.js",
   "scripts": {
@@ -44,7 +44,10 @@
       "icon": "public/icon.ico"
     },
     "mac": {
-      "target": "dmg",
+      "target": [
+        "dmg",
+        "zip"
+      ],
       "icon": "public/icon.icns",
       "category": "public.app-category.utilities"
     },
