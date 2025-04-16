@@ -6,12 +6,9 @@ function App() {
     <>
       <UpdateNotification />
 
-      <div>v2.0.0</div>
+      <div>v4.0.0</div>
       <h1>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
-        perferendis eligendi accusamus veniam dicta rerum, nobis fugiat tempore
-        atque dolorum qui vero autem voluptatem ut! Inventore exercitationem
-        amet aspernatur beatae?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, vitae!
       </h1>
     </>
   );

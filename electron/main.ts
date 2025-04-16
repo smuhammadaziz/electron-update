@@ -113,10 +113,7 @@ function createWindow() {
 
     ipcMain.on("quit-and-install", () => {
       log.info("User initiated quit and install");
-      setImmediate(() => {
-        // Ensures response is sent before quitting
-        autoUpdater.quitAndInstall(true, true); // silent=true, forceRunAfter=true
-      });
+      setImmediate(() => autoUpdater.quitAndInstall(false, true));
     });
   }
   // --- End Auto Update Setup ---
