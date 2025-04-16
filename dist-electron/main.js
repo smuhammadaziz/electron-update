@@ -16301,7 +16301,7 @@ let win = null;
 const viteDevServerUrl = process.env["VITE_DEV_SERVER_URL"];
 function createWindow() {
   win = new require$$1$5.BrowserWindow({
-    icon: path$m.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
+    icon: path$m.join(process.env.VITE_PUBLIC || "", "something"),
     // Change icon path
     width: 800,
     height: 600,
@@ -16340,7 +16340,10 @@ function createWindow() {
       main$2.autoUpdater.downloadUpdate().catch((err) => {
         log.error("Error starting download:", err);
         const message = (err == null ? void 0 : err.message) ?? JSON.stringify(err ?? "Unknown download error");
-        win == null ? void 0 : win.webContents.send("update-error", `Error starting download: ${message}`);
+        win == null ? void 0 : win.webContents.send(
+          "update-error",
+          `Error starting download: ${message}`
+        );
       });
     });
     require$$1$5.ipcMain.on("quit-and-install", () => {
@@ -16357,7 +16360,7 @@ function createWindow() {
     win.loadURL(viteDevServerUrl);
     win.webContents.openDevTools();
   } else {
-    win.loadFile(path$m.join(process.env.DIST, "index.html"));
+    win.loadFile(path$m.join(process.env.DIST || "", "index.html"));
   }
   win.on("closed", () => {
     win = null;
