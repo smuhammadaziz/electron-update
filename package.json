@@ -40,7 +40,7 @@
       "dist-electron/**/*"
     ],
     "win": {
-      "target": "nsis",
+      "target": "portable",
       "icon": "public/icon.ico",
       "artifactName": "updater-setup-${version}.${ext}"
     },
