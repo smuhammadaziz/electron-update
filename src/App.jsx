@@ -6,7 +6,7 @@ function App() {
     <>
       <UpdateNotification />
 
-      <div className="text-sm text-gray-500 text-end px-4 pt-4">v2.0.0</div>
+      <div className="text-sm text-gray-500 text-end px-4 pt-4">v1.0.0</div>
 
       <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 py-8">
         <div className="max-w-3xl bg-white p-8 rounded-2xl shadow-md space-y-6">
