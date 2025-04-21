@@ -6,7 +6,7 @@ function App() {
     <>
       <UpdateNotification />
 
-      <div>v1.0.0</div>
+      <div>v2.0.0</div>
       <h1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti magni
         sunt rerum laboriosam ex consequuntur qui ipsam, delectus, consectetur
