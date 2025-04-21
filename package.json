@@ -40,7 +40,7 @@
       "dist-electron/**/*"
     ],
     "win": {
-      "target": "portable",
+      "target": "nsis",
       "icon": "public/icon.ico",
       "artifactName": "updater-setup-${version}.${ext}"
     },
@@ -60,6 +60,21 @@
       "provider": "github",
       "owner": "smuhammadaziz",
       "repo": "electron-update"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "KSB-POS",
+      "license": "LICENSE.txt",
+      "allowElevation": true,
+      "installerIcon": "assets/ksb.ico",
+      "uninstallerIcon": "assets/ksb.ico",
+      "installerHeaderIcon": "assets/ksb.ico",
+      "runAfterFinish": true,
+      "include": "installer.nsh"
     }
   }
 }
