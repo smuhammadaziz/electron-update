@@ -8,7 +8,7 @@ function App() {
         <div className="w-full max-w-2xl bg-gray-800 rounded-2xl shadow-2xl p-6 md:p-10 space-y-6 border border-gray-700">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-semibold text-white">Latest</h2>
-            <span className="text-sm text-gray-400">v3.0.0</span>
+            <span className="text-sm text-gray-400">v4.0.0</span>
           </div>
 
           <UpdateNotification />
@@ -23,12 +23,6 @@ function App() {
               mashed potatoes. Get ready for a whole new level of performance
               and stability.
             </p>
-          </div>
-
-          <div className="pt-4">
-            <button className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 rounded-xl text-white font-medium shadow-lg">
-              Update Now
-            </button>
           </div>
         </div>
       </main>
